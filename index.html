@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cassette Timer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Cabecera fija -->
+    <div class="topbar" id="dragArea">
+      <div class="screw screw-tl"></div>
+      <span class="brand" id="topTitle">◈ CASSETTE TIMER ◈</span>
+      <button class="close-btn" id="closeBtn">✕</button>
+      <div class="screw screw-tr"></div>
+    </div>
+
+    <!-- Vista activa: tarjetas -->
+    <div class="cards-area" id="cardsArea">
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">◫</div>
+        <div class="empty-text">Ningún proyecto activo</div>
+        <div class="empty-hint">Pulsa + NUEVO para empezar</div>
+      </div>
+    </div>
+
+    <!-- Vista historial (oculta por defecto) -->
+    <div class="history-area" id="historyArea" style="display:none">
+      <div class="history-list" id="historyList"></div>
+    </div>
+
+    <!-- Formulario nuevo proyecto -->
+    <div class="new-form" id="newForm" style="display:none">
+      <input type="text" id="newProjectName" class="new-input"
+             placeholder="NOMBRE DEL PROYECTO" maxlength="28" spellcheck="false" autocomplete="off">
+      <div class="new-form-btns">
+        <button class="btn-form-ok"     id="confirmNewBtn">✓ CREAR</button>
+        <button class="btn-form-cancel" id="cancelNewBtn">✕</button>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="bottombar" id="bottombar">
+      <div class="screw screw-bl"></div>
+
+      <!-- Botones vista activa -->
+      <div class="bar-active" id="barActive">
+        <button class="btn-bar btn-history"  id="historyBtn">◷ HISTORIAL</button>
+        <button class="btn-bar btn-new-main" id="newProjectBtn">＋ NUEVO</button>
+        <button class="btn-bar btn-export"   id="exportBtn">↓ EXPORTAR</button>
+      </div>
+
+      <!-- Botones vista historial -->
+      <div class="bar-history" id="barHistory" style="display:none">
+        <button class="btn-bar btn-back"   id="backBtn">← VOLVER</button>
+        <button class="btn-bar btn-export" id="exportBtn2">↓ EXPORTAR</button>
+      </div>
+
+      <div class="screw screw-br"></div>
+    </div>
+
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

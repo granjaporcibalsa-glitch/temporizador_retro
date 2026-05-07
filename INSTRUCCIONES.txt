@@ -1,0 +1,166 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║              ◈  CASSETTE TIMER  ◈  v1.0                     ║
+║         Temporizador de proyectos estilo retro               ║
+╚══════════════════════════════════════════════════════════════╝
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CÓMO INSTALAR (para quien lo recibe)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Descomprime el ZIP en cualquier carpeta de tu PC.
+     Por ejemplo: C:\Programas\Cassette Timer\
+
+  2. Entra en la carpeta descomprimida y haz doble clic en:
+         Cassette Timer.exe
+
+  3. Listo. No requiere instalación, no necesita internet,
+     no necesita Node.js ni ningún programa extra.
+
+  NOTA: Windows puede mostrar una advertencia de seguridad
+  la primera vez ("Aplicación desconocida"). Es normal porque
+  la app no tiene firma digital de pago. Haz clic en
+  "Más información" > "Ejecutar de todas formas".
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CÓMO USAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  La ventana flota siempre encima de tus otras ventanas
+  y se puede arrastrar desde cualquier punto.
+
+  ┌─── CREAR UN PROYECTO ───────────────────────────────────┐
+  │  Pulsa  [＋ NUEVO]  en la barra inferior.               │
+  │  Escribe el nombre del proyecto y pulsa ENTER o ✓ CREAR │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── MEDIR EL TIEMPO ─────────────────────────────────────┐
+  │  Cada proyecto tiene sus propios botones:               │
+  │    [▶ PLAY]  — empieza a contar                         │
+  │    [■ STOP]  — para y guarda la sesión                  │
+  │                                                         │
+  │  Puedes tener VARIOS proyectos contando a la vez.       │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── RENOMBRAR UN PROYECTO ───────────────────────────────┐
+  │  Haz DOBLE CLIC sobre el nombre del proyecto.           │
+  │  Edita y pulsa ENTER para confirmar, ESC para cancelar. │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── ARCHIVAR UN PROYECTO ────────────────────────────────┐
+  │  Cuando termines un proyecto, pulsa el botón  [⏏]       │
+  │  que aparece a la derecha de su nombre.                 │
+  │  El proyecto desaparecerá del panel pero sus datos      │
+  │  quedan guardados para siempre.                         │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── VER EL HISTORIAL ────────────────────────────────────┐
+  │  Pulsa  [◷ HISTORIAL]  en la barra inferior.            │
+  │  Verás todos los proyectos archivados con:              │
+  │    · Tiempo total empleado                              │
+  │    · Fechas de inicio y cierre                          │
+  │    · Número de sesiones y promedio por sesión           │
+  │  Pulsa  [← VOLVER]  para volver a los proyectos activos.│
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── EXPORTAR INFORME ────────────────────────────────────┐
+  │  Pulsa  [↓ EXPORTAR]  (disponible en ambas vistas).     │
+  │  Se generan automáticamente en tu carpeta Documentos:   │
+  │                                                         │
+  │    Documentos\CassetteTimer\                            │
+  │      cassette-timer-YYYY-MM-DD.html  ← Informe visual  │
+  │      cassette-timer-YYYY-MM-DD.csv   ← Para Excel       │
+  │                                                         │
+  │  El HTML se abre solo en tu navegador.                  │
+  │  El CSV puedes abrirlo con Excel o Google Sheets.       │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── CERRAR LA APP ───────────────────────────────────────┐
+  │  Pulsa la  [✕]  de la esquina superior derecha.         │
+  │  Si hay timers activos, los guarda antes de cerrar.     │
+  └──────────────────────────────────────────────────────────┘
+
+  ┌─── REDIMENSIONAR ───────────────────────────────────────┐
+  │  Arrastra el borde inferior de la ventana para          │
+  │  hacerla más alta si tienes muchos proyectos.           │
+  └──────────────────────────────────────────────────────────┘
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  DÓNDE SE GUARDAN TUS DATOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Los datos de cada usuario se guardan en su propio PC,
+  en la carpeta de datos de la aplicación:
+
+    Windows:  C:\Users\TU_USUARIO\AppData\Roaming\cassette-timer\
+    Mac:      ~/Library/Application Support/cassette-timer/
+
+  Archivo:  cassette-data.json
+
+  Cada instalación es completamente independiente.
+  Los datos de un PC no se mezclan con los de otro.
+  Si quieres hacer una copia de seguridad, copia ese archivo.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CÓMO CONSTRUIR EL INSTALADOR (para el desarrollador)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Requisitos: Node.js 18+ instalado.
+
+  1. Abre una terminal en la carpeta del proyecto.
+
+  2. Instala dependencias (solo la primera vez):
+         npm install
+
+  3. Genera la carpeta de distribución para Windows:
+         npm run build:win
+
+     Resultado:  dist\Cassette Timer-win32-x64\
+
+  4. Comprime esa carpeta en un ZIP y compártela.
+     El destinatario solo tiene que descomprimir y ejecutar.
+
+  Para probar la app sin compilar:
+         npm start
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  REQUISITOS DEL SISTEMA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Windows 10 / 11  (64 bits)
+  ~250 MB de espacio en disco
+  Sin conexión a internet necesaria
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PREGUNTAS FRECUENTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  P: ¿Puedo tener la app en dos PCs distintos?
+  R: Sí. Instala en cada PC. Los datos son independientes.
+
+  P: ¿Puedo tener varios proyectos contando a la vez?
+  R: Sí. Cada tarjeta tiene su propio timer independiente.
+
+  P: ¿Pierdo mis datos si desinstalo?
+  R: Los datos están en AppData\Roaming\cassette-timer\.
+     Haz una copia de cassette-data.json antes de desinstalar.
+
+  P: ¿Puedo mover los datos de un PC a otro?
+  R: Sí. Copia el archivo cassette-data.json a la misma
+     ruta en el otro equipo.
+
+  P: El antivirus lo bloquea, ¿es seguro?
+  R: Sí. Es una alerta falsa habitual en apps sin firma
+     digital. La app no accede a internet, no lee tus
+     archivos personales y no instala nada en el sistema.
+     Puedes revisar el código fuente completo.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+

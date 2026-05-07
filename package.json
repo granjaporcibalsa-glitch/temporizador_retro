@@ -1,0 +1,64 @@
+{
+  "name": "cassette-timer",
+  "version": "1.0.0",
+  "description": "Floating retro cassette project timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-packager . \"Cassette Timer\" --platform=win32 --arch=x64 --out=dist --overwrite --ignore=dist",
+    "build:mac": "electron-packager . \"Cassette Timer\" --platform=darwin --arch=x64 --out=dist --overwrite --ignore=dist"
+  },
+  "build": {
+    "appId": "com.cassette.timer",
+    "productName": "Cassette Timer",
+    "copyright": "Copyright © 2026",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signingHashAlgorithms": null,
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Cassette Timer"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "styles.css",
+      "renderer.js",
+      "assets/**",
+      "node_modules/**"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^29.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
+}

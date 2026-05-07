@@ -1,0 +1,13 @@
+# Dependencias
+node_modules/
+dist/
+
+# Carpetas de herramientas
+.claude/
+
+# Archivos temporales
+.DS_Store
+*.log
+
+# Opcional (si no quieres subir builds)
+build/
